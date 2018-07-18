@@ -1,7 +1,8 @@
-package userlogindemo.demo.register;
+package userlogindemo.demo.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import userlogindemo.demo.bean.Person;
 
 import java.util.List;
 
@@ -15,4 +16,6 @@ public interface UserRepository extends JpaRepository<Person, Integer> {
 
     //通过年龄来查询
     List<Person> findByAge(Integer age);
+
+    List<Person> findByName(String name);
 }
