@@ -95,18 +95,6 @@ public class UserController {
         userRepository.delete(person);
     }
 
-    /**
-     * 自定义的操作
-     *
-     * @param age
-     * @return
-     */
-    @PostMapping("findByAge")
-    public List<Person> findByAge(@RequestParam("age") Integer age) {
-        return userRepository.findByAge(age);
-    }
-
-
     @PostMapping("findPassword")
     public String findBackPassword(@RequestBody Map<String,Object> reqMap){
         Person person = getPersonFromMap(reqMap);

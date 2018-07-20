@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="copyright" content="创意共享，只要保持署名和非商用，可以自由转载" />
+
+    <style>
+        #login_main{
+            width:20%;
+            height:100%;
+            background-color:#e0e0e3;
+            margin:0 auto;
+        }
+        #paragraph{
+            width:150px;
+            height:50px;
+            background-color:#6495ED;
+            margin-left: 30px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<img src="../../../res/img/quality_bg2.png" width="100%" height="50%" alt="背景图">
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="/games">Games</a>
+            <li><a href="/forum">Forum</a>
+            <li><a href="/download">Download</a>
+        </ul>
+    </nav>
+
+</header>
+
+<main>
+    <article>
+        <header>
+            <h1>北京美好的一天</h1>
+            <p><time datetime="2018-5-8">2018-5-8发布</time></p>
+        </header>
+        <p>概要：讲述2018-5-8我去北京的经历...</p>
+        <p>...</p>
+        <footer>
+
+        </footer>
+    </article>
+    <article>
+        <header>
+            <h1>上海美好的一天</h1>
+            <p><time datetime="2018-5-8">2018-6-8发布</time></p>
+        </header>
+        <p>概要：讲述2018-6-8我去上海的经历...</p>
+        <p>...</p>
+        <footer>
+            <a itemprop="discussionUrl" href="?comments=1">Show comments...</a>
+        </footer>
+    </article>
+
+
+
+    <!--<video src="../static/video/first_action.mp4" poster="../static/img/quality_bg1.png" controls preload></video>-->
+
+    <video width="300" poster="../../../res/img/quality_bg2.png" controls preload loop muted>
+        <source src="../static/video/first_action.mp4">
+
+        <track src="en_track.vtt" kind="subtitles" srclang="en" label="English" default>
+        <track src="cn_track.vtt" kind="captions"  srclang="zh" label="简体中文">
+        你的浏览器不支持video，还不赶快使用现代浏览器！
+    </video>
+
+    <a href = "http://www.waibo.wang">歪脖网</a>
+</main>
+
+<footer>
+    <p>
+        <a href="">关于我</a> |
+        <a href="">联系我</a> |
+        <a href="">网站地图</a> |
+        <a href="">诚聘英才</a> |
+        <a href="">商务合作</a>
+    </p>
+    <address>
+        Email: <a href="www.baidu.com">123456@qq.com</a><br />
+        QQ: 123456<br />
+        Phone: +86 12345678
+    </address>
+    <p>Copyright © 2016</p>
+</footer>
+
+<script type="text/javascript">
+    //有参有返回值的方法
+    function sum(a,b) {
+        <!--gygguuuiu-->
+        console.log("===>>>a: "+type+", b: "+b);
+
+        return a+b;
+    }
+        //有参无返回值的方法
+    function alertMessage(message) {
+        alert(message);
+    }
+    //无参无返回值的方法
+    function show(){
+        //显示hello world
+    document.getElementById("p").innerHTML="hello world"; } function s() {
+        //调用原生的方法，android为约定的别名；back()为原生的方法
+    var result=window.android.back();
+    //将返回结果显示在id为p的控件上
+    document.getElementById("p").innerHTML=result;
+    }
+</script>
+
+
+
+
+
+</body>
+
+<!--<script>
+    function changeText() {
+        document.getElementById("paragraph").innerHTML = "已登录";
+    }
+</script>-->
+</html>
