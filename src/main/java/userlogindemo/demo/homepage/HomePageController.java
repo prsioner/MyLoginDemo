@@ -1,13 +1,16 @@
 package userlogindemo.demo.homepage;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomePageController {
 
-
-    @PostMapping("/myHomePages")
+    /**
+     * 返回 resources/templates/myHomePage.html
+     * @return
+     */
+    @RequestMapping(value="/myHomePage")
     public String myHomePage(){
         return "myHomePage";
     }

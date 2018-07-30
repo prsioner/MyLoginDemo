@@ -1,4 +1,4 @@
-package userlogindemo.demo.user;
+package userlogindemo.demo.business.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

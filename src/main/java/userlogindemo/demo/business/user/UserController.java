@@ -1,10 +1,12 @@
-package userlogindemo.demo.user;
+package userlogindemo.demo.business.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import userlogindemo.demo.bean.Person;
+import userlogindemo.demo.util.FastJsonUtil;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -49,14 +51,26 @@ public class UserController {
 
         Person person = getPersonFromMap(reqMap);
         //判断用户是否存在，如果不存在，则插入数据库
+        Map<String,Object> returnMap = new HashMap<>();
+        returnMap.put("code","0");
+        returnMap.put("data","null");
         if(isUserExist(person)){
-            return "用户已存在!";
+
+            returnMap.put("msg","用户已存在!");
+            String msg = FastJsonUtil.toJSONString(returnMap,true);
+            return msg;
         }else {
             if(StringUtils.isEmpty(person.getName()) || StringUtils.isEmpty(person.getPassword())){
-                return  "参数不能为空!";
+
+                returnMap.put("msg","参数不能为空!");
+                String msg = FastJsonUtil.toJSONString(returnMap,true);
+                return msg;
             }else {
                 userRepository.save(person);
-                return "用户注册成功!";
+                returnMap.put("msg","用户注册成功!");
+                String msg = FastJsonUtil.toJSONString(returnMap,true);
+                return msg;
+
             }
         }
 
@@ -65,14 +79,28 @@ public class UserController {
     @PostMapping("/userLogin")
     public String userLogin(@RequestBody Map<String,Object> reqMap){
         Person person = getPersonFromMap(reqMap);
+        System.out.print("userLogin-----reqMap.toString:"+person.toString());
+
+        Map<String,Object> returnMap = new HashMap<>();
+        returnMap.put("code","0");
+        returnMap.put("data","null");
+
         if(isUserExist(person)){
             if(StringUtils.isEmpty(person.getName()) || StringUtils.isEmpty(person.getPassword())){
-                return  "参数不能为空!";
+
+                returnMap.put("msg","参数不能为空!");
+                String msg = FastJsonUtil.toJSONString(returnMap,true);
+                return msg;
+
             }else {
-                return "用户登录成功!";
+                returnMap.put("msg","用户登录成功!");
+                String msg = FastJsonUtil.toJSONString(returnMap,true);
+                return msg;
             }
         }else {
-            return "用户不存在，请先注册!";
+            returnMap.put("msg","用户不存在，请先注册!");
+            String msg = FastJsonUtil.toJSONString(returnMap,true);
+            return msg;
         }
 
     }
